@@ -1,9 +1,291 @@
 <!DOCTYPE html>
-<html lang="ja">
-<meta charset="UTF-8">
-<title>chat</title>
-<meta name="description" content="sample_chat" />
-<link rel="stylesheet" href="page02.css">
+
+<head>
+    <html lang="ja">
+    <meta charset="UTF-8">
+    <title>chat</title>
+    <meta name="description" content="sample_chat" />
+    <!--<link rel="stylesheet" href="page02.css">-->
+    <style>
+        body{
+    background-color: #ffffff;
+    color:#000000;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","游ゴシック","YuGothic","MS Pゴシック","MS PGothic",sans-serif;
+    font-size:14pt;
+    line-height:24pt;
+    }
+    
+    h1,h2,h3,h4,h5,p{
+        margin:0;
+        padding:0;
+    }
+
+    .wrapper01 {    
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+      }
+
+    .wrapper01 .wrap01{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+      }
+
+    .icon {
+        flex: 0 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 25px;
+        filter: drop-shadow(5px 5px 5px #aaa);
+      }
+
+    .chatroom {
+        flex: 0 0 auto;
+        padding-top: 17px;
+        color: #332aa3;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+    .subname {
+        flex: 0 0 auto;
+        padding: 0;
+        opacity: 0.7;
+        font-size: 23px;
+      }
+
+    .wrapper01 .wrap02{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        margin-left: auto;
+        padding-right: 10px;
+      }
+
+    .company {
+        flex: 0 0 auto;
+        padding: 0;
+        opacity: 0.5;
+      }
+
+    .companyname {
+        flex: 0 0 auto;
+        padding: 0;
+        color: #332aa3;
+        font-weight: bold;
+      }
+
+    .wrapper01 .wrap03{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        margin-left: auto;
+      }
+
+    .creater {
+        flex: 0 0 auto;
+        padding: 0;
+        opacity: 0.5;
+      }
+
+    .creatername {
+        flex: 0 0 auto;
+        padding: 0;
+        color: #332aa3;
+        font-weight: bold;
+      }
+
+    .hr {
+        border-bottom: 1px solid #cec2c7;
+     }
+
+    .wrapper02{
+      display: flex;
+	    align-items: center;
+	    justify-content: center;
+     }
+
+     .date{
+        width: 150px;
+        background-color:#332aa3;
+        color: #ffffff;
+        border-radius: 1.5em;	
+        opacity: 1;
+        text-align: center;
+        box-shadow: 3px 3px 4px  rgba(0,0,0,0.3);
+     }
+
+     .wrapper03 .wrap03{
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      width: 650px;
+      padding-left: 15px;
+      padding-top: 50px;
+    }
+
+    .wrap03 .self{
+      flex: 0 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      filter: drop-shadow(5px 5px 5px rgb(170, 170, 170));
+    }
+
+    .wrap03 .messagebox01{
+      width: 500px;
+      background-color:#332aa3;
+      color: #ffffff;
+      border-radius: 0em 1.0em 1.0em 1.0em/0em 1.0em 1.0em 1.0em;	
+      opacity: 1;
+      text-align: left;
+      word-wrap: break-word;
+      min-width: 0;
+      padding: 10px;
+      box-shadow: 3px 3px 4px  rgba(0,0,0,0.3);
+   }
+
+   .wrap03 .time01{
+      padding-left: 15px;
+      flex: 1 1 auto;
+      opacity: 0.5;
+   }
+
+   .wrapper03 .wrap04{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin-left: auto;
+    width: 450px;
+    padding-right: 25px;
+    padding-top: 100px;
+  }
+
+  .wrap04 .time02{
+    padding-right: 20px;
+    flex: 1 1 auto;
+    opacity: 0.5;
+ }
+
+  .wrap04 .messagebox02{
+    width: 300px;
+    background-color:#7f8184;
+    color: #ffffff;
+    border-radius: 1.0em 0em 1.0em 1.0em/1.0em 0em 1.0em 1.0em;		
+    opacity: 1;
+    text-align: left;
+    word-wrap: break-word;
+    min-width: 0;
+    padding: 10px;
+    box-shadow: 3px 3px 4px  rgba(0,0,0,0.3);
+ }
+
+ .wrap04 .opponent{
+  flex: 0 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  filter: drop-shadow(5px 5px 5px #aaa);
+}
+
+    form {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        background: #ffffff;
+        z-index: 100;
+      }
+
+    .name {
+        padding: 1px;
+        flex: 0 0 auto;
+        width: 100px;
+        border-top: 2px solid #ededf2;
+        opacity: 1;
+        height: 85px;
+      }
+
+    .name input {
+        padding-left: 20px;
+        border: 0;
+        width: 80%;
+        height: 100%;
+        font-size: 20px;
+        opacity: 0.5;
+      }
+
+    .message {
+        padding: 1px;
+        flex: 1 1 auto;
+        border-top: 2px solid #ededf2;
+        opacity: 1;
+      }
+
+    .message input {
+        padding: 1px;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        opacity: 0.5;
+      }
+    
+    .send {
+        flex: 0.025 0.045 auto;
+        border-top: 2px solid #ededf2;
+        padding-top: 20px;
+        padding-left: 15px;
+        opacity: 1;
+      }
+
+    .send input {
+        padding: 0;
+        border: 0;
+        background: #ffffff;
+      }
+    </style>
+</head>
+
+<template id="template">
+    <div style="flex-wrap:wrap;">
+        <div class="wrap03">
+            <div class="self"><img src="./picture/icon.png" width="70" height="70" /></div>
+            <div class="messagebox01"></div>
+            <div class="time01">16:23</div>
+        </div>
+    </div>
+</template>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        console.log('first')
+        const socket = io()
+        $('form').submit(() => {
+            const data = {
+                name: $('.name input').val(),
+                message: $('.message input').val(),
+            }
+            console.log(data)
+            socket.emit('chat message', data)
+            $('.message input').val('')
+            return false
+        })
+        socket.on('chat message', function (data) {
+            // console.log(socket.id)
+            let str = data.name + ': ' + data.message
+            $('.messagebox01').text(str)
+        });
+    })
+</script>
 
 <body>
 
@@ -39,7 +321,7 @@
                 <div style="flex-wrap:wrap;">
                     <div class="wrap03">
                         <div class="self"><img src="./picture/icon.png" width="70" height="70" /></div>
-                        <div class="messagebox01">messagemessagemessagemessagemessagemessage</div>
+                        <div class="messagebox01"></div>
                         <div class="time01">16:23</div>
                     </div>
                     <div class="wrap04">
@@ -50,7 +332,7 @@
                 </div>
             </div>
 
-            <div class="wrapper04">
+            <form action="">
                 <div class="name">
                     <input type="text" placeholder="name" />
                 </div>
@@ -60,7 +342,7 @@
                 <div class="send" type="submit">
                     <input type="image" src="./picture/paper-airplane02.png" name="button1" width="50" height="50" />
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 </body>

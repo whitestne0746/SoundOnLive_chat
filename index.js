@@ -4,7 +4,7 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http)
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/page02.html')
 })
 
 io.on('connection', function(socket) {
@@ -12,7 +12,7 @@ io.on('connection', function(socket) {
     if (!data.name) {
       data = {
         name: '匿名のユーザ',
-        msg: data.msg,
+        message: data.message,
       }
     }
     io.emit('chat message', data)
