@@ -282,7 +282,8 @@
         socket.on('chat message', function (data) {
             // console.log(socket.id)
             let str = data.name + ': ' + data.message
-            $('.messagebox01').text(str)
+            // $('.messagebox01').text(str)
+            $('#messages').append($('<li>#template'))
         });
     })
 </script>
@@ -319,16 +320,7 @@
 
             <div class="wrapper03">
                 <div style="flex-wrap:wrap;">
-                    <div class="wrap03">
-                        <div class="self"><img src="./picture/icon.png" width="70" height="70" /></div>
-                        <div class="messagebox01"></div>
-                        <div class="time01">16:23</div>
-                    </div>
-                    <div class="wrap04">
-                        <div class="time02">16:25</div>
-                        <div class="messagebox02">messagemessagemessagemessagemessagemessage</div>
-                        <div class="opponent"><img src="./picture/icon.png" width="70" height="70" /></div>
-                    </div>
+                    <ul id="messages"></ul>
                 </div>
             </div>
 
